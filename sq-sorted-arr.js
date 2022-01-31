@@ -20,6 +20,11 @@ const makeSquares = function (nums) {
   return sortedSquares.reverse();
 }
 
+/*
+Runtime: 175 ms, faster than 37.18% of JavaScript online submissions for Squares of a Sorted Array.
+Memory Usage: 49.1 MB, less than 5.11% of JavaScript online submissions for Squares of a Sorted Array.
+*/
+
 const arr1 = [-2, -1, 0, 2, 3];
 console.log(makeSquares(arr1));
 // Output: [0, 1, 4, 4, 9]

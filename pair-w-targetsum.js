@@ -6,33 +6,19 @@ Write a function to return the indices of the two numbers (i.e. the pair) such t
 */
 
 // USING TWO POINTERS
-// const pair_with_targetsum = function (arr, target_sum) {
-//   let end = arr.length - 1;
-//   let start = 0;
-//   while (start < end) {
-//     const sum = arr[start] + arr[end];
-//     if (sum === target_sum) {
-//       return [start, end];
-//     }
-//     if (sum < target_sum) {
-//       start++;
-//     } else {
-//       end--;
-//     }
-//   }
-// }
-
-// USING HASHMAP
-//                0  1  2  3  4
-// const arr1 =  [1, 2, 3, 4, 6], target1 = 6;
 const pair_with_targetsum = function (arr, target_sum) {
-  const nums = {}; // [1:0, ]
-  for (let i = 0; i < arr.length; i++) { // 1
-    const num = arr[i]; // 2
-    if ((target_sum - num) in nums) {
-      return [nums[target_sum - num], i];
+  let end = arr.length - 1;
+  let start = 0;
+  while (start < end) {
+    const sum = arr[start] + arr[end];
+    if (sum === target_sum) {
+      return [start, end];
     }
-    nums[num] = i;
+    if (sum < target_sum) {
+      start++;
+    } else {
+      end--;
+    }
   }
 }
 
