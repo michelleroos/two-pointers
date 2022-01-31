@@ -16,6 +16,14 @@ var remove_duplicates = function (nums) {
 };
 
 
+/*
+T: O(n) --> n = elements in the arr
+S:(1)
+
+Runtime: 128 ms, faster than 50.69% of JavaScript online submissions for Remove Duplicates from Sorted Array.
+Memory Usage: 44.6 MB, less than 7.66% of JavaScript online submissions for Remove Duplicates from Sorted Array.
+*/
+
 const arr1 = [2, 3, 3, 3, 6, 9, 9];
 console.log(remove_duplicates(arr1));
 // Output: 4
