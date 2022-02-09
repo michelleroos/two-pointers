@@ -5,25 +5,52 @@ A phrase is a palindrome if, after converting all uppercase letters into lowerca
 Given a string s, return true if it is a palindrome, or false otherwise.
 */
 
-var isPalindrome = function (s) {
-  const str = createAlphaNum(s);
-  return str.split('').reverse().join('') === str;
-};
+// // O(n) time & O(n) space
+// var isPalindrome = function (s) {
+//   const str = createAlphaNum(s);
+//   return str.split('').reverse().join('') === str;
+// };
 
-var createAlphaNum = function (s) { // O(n)
-  const alphanum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-  let str = [];
-  for (let c of s) {
-    if (alphanum.includes(c)) {
-      str.push(c.toLowerCase());
-    }
-  }
-  return str.join('');
-}
+// var createAlphaNum = function (s) { // O(n)
+//   const alphanum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+//   let str = [];
+//   for (let c of s) {
+//     if (alphanum.includes(c)) {
+//       str.push(c.toLowerCase());
+//     }
+//   }
+//   return str.join('');
+// }
 
 /*
 Runtime: 104 ms, faster than 56.65% of JavaScript online submissions for Valid Palindrome.
 Memory Usage: 51.2 MB, less than 5.04% of JavaScript online submissions for Valid Palindrome.
+*/
+
+
+var isPalindrome = function (s) {
+  const alphanum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+  let right = s.length - 1;
+  let left = 0;
+  while (left < right) {
+    while (left < right && !(alphanum.includes(s[left]))) {
+      left++;
+    }
+    while (left < right && !(alphanum.includes(s[right]))) {
+      right--;
+    }
+    if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+/*
+Runtime: 83 ms, faster than 87.24% of JavaScript online submissions for Valid Palindrome.
+Memory Usage: 45 MB, less than 29.83% of JavaScript online submissions for Valid Palindrome.
 */
 
 const s1 = "A man, a plan, a canal: Panama";
