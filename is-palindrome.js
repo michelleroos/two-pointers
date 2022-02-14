@@ -27,6 +27,8 @@ Runtime: 104 ms, faster than 56.65% of JavaScript online submissions for Valid P
 Memory Usage: 51.2 MB, less than 5.04% of JavaScript online submissions for Valid Palindrome.
 */
 
+// "! * a b ! a"
+//        lr
 
 var isPalindrome = function (s) {
   const alphanum = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
